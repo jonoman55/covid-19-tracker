@@ -29,10 +29,15 @@ class App extends React.Component {
 
     return (
       <div className={styles.container}>
+        {/* TODO - Add a header component that contains the COVID-19 Image */}
+        {/* TODO - Add a footer component that contains copyright and API credit */}
+        {/* TODO - Add a top ten component on the right side */}
+        {/* TODO - Add a clear button to reset to Global */}
+        {/* TODO - Change the dropdown menu styling */}
         <img className={styles.image} src={image} alt="COVID-19" />
-        <Cards data={data} />
+        <Cards data={data} country={country} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} /> 
+        <Chart data={data} country={country} />
       </div>
     );
   }

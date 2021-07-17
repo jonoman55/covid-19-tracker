@@ -6,7 +6,7 @@ import { fetchDailyData } from '../../api';
 import styles from './Chart.module.css';
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
-  const [dailyData, setDailyData] = useState({});
+  const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
     const fetchMyAPI = async () => {
@@ -40,7 +40,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   );
 
   const lineChart = (
-    dailyData[0] ? (
+    dailyData.length ? (
       <Line
         data={{
           labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
